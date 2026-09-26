@@ -46,7 +46,7 @@ export default function Navbar() {
         }`}
     >
       <nav
-        className={`mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-5 py-3 glass-strong transition-all duration-500 ${scrolled ? "mx-4 md:mx-auto" : ""
+        className={`mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-5 py-3 bg-white dark:bg-gray-800  transition-all duration-500 ${scrolled ? "mx-4 md:mx-auto" : ""
           }`}
       >
         <a href="#top" className="group flex items-center gap-2.5">
@@ -87,13 +87,13 @@ export default function Navbar() {
             className="grid h-10 w-10 place-items-center rounded-lg text-zinc-500 hover:bg-zinc-900/[0.06] hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-white/10 dark:hover:text-white"
             aria-label="Toggle menu"
           >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            {open ? (
-              <path d="M18 6 6 18M6 6l12 12" />
-            ) : (
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            )}
-          </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              {open ? (
+                <path d="M18 6 6 18M6 6l12 12" />
+              ) : (
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              )}
+            </svg>
           </button>
         </div>
       </nav>
