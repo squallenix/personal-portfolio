@@ -65,7 +65,7 @@ export const techMarquee = [
 
 export const experience = [
   {
-    period: "2025 — Present",
+    period: "2026 June — Present",
     title: "Full-Stack Developer Intern",
     org: "MSR Creation",
     points: [

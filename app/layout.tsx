@@ -34,14 +34,26 @@ export const metadata: Metadata = {
   },
 };
 
+/* Runs before paint to apply the stored theme (or the OS preference)
+   and set the canonical cookie, avoiding any flash of wrong theme. */
+const themeInitScript = `(function(){try{
+var m=document.cookie.match(/(?:^|; )theme=(light|dark)/);
+var s=m&&m[1]?m[1]:localStorage.getItem('theme');
+if(s!=='light'&&s!=='dark'){s=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+var d=s==='dark';
+document.documentElement.classList.toggle('dark',d);
+document.cookie='theme='+s+';path=/;max-age=31536000;samesite=lax';
+}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${mono.variable} font-sans antialiased bg-[#05060a] text-zinc-200 min-h-screen overflow-x-hidden selection:bg-emerald-400/30 selection:text-white`}
+        className={`${inter.variable} ${mono.variable} font-sans antialiased bg-[#f5f7fa] text-zinc-800 dark:bg-[#05060a] dark:text-zinc-200 min-h-screen overflow-x-hidden selection:bg-emerald-300/40 selection:text-zinc-900 dark:selection:bg-emerald-400/30 dark:selection:text-white`}
       >
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         {children}
       </body>
     </html>

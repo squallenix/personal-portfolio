@@ -33,7 +33,7 @@ export default function ProjectCard({ repo }: { repo: Repo }) {
           </svg>
         </div>
 
-        <h3 className="text-lg font-semibold tracking-tight text-white transition-colors duration-300 group-hover:text-emerald-200">
+        <h3 className="text-lg font-semibold tracking-tight text-zinc-900 transition-colors duration-300 group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-200">
           {repo.title}
         </h3>
         <p className="mt-0.5 font-mono text-xs text-emerald-400/80">

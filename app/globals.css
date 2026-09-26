@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Dark mode is class-based (toggled on <html>), so it can be
+   driven by the ThemeToggle instead of the OS setting only. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, "JetBrains Mono", monospace;
@@ -85,6 +89,85 @@ html {
 body {
   background-color: #05060a;
   color: #e4e4e7;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* ============ Light theme overrides ============ */
+html:not(.dark) {
+  color-scheme: light;
+}
+
+html:not(.dark) body {
+  background-color: #f5f7fa;
+  color: #27272a;
+}
+
+html:not(.dark) .backdrop-scene {
+  background:
+    radial-gradient(ellipse 80% 60% at 70% -10%, rgba(16, 185, 129, 0.08), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 10% 10%, rgba(139, 92, 246, 0.07), transparent 60%),
+    #f5f7fa;
+}
+
+html:not(.dark) .backdrop-scene::before {
+  opacity: 0.45;
+}
+
+html:not(.dark) .backdrop-scene::after {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+}
+
+html:not(.dark) .glass {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.92),
+    rgba(255, 255, 255, 0.62) 40%,
+    rgba(255, 255, 255, 0.8)
+  );
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.9) inset,
+    0 20px 45px -25px rgba(15, 23, 42, 0.2);
+}
+
+html:not(.dark) .glass-strong {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.78) 45%,
+    rgba(255, 255, 255, 0.88)
+  );
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.9) inset,
+    0 24px 60px -25px rgba(15, 23, 42, 0.25);
+}
+
+/* Slightly deeper gradient so the headline stays readable on light.
+   Override background-image only — the shorthand would reset
+   background-clip: text and render a solid color block. */
+html:not(.dark) .text-gradient {
+  background-image: linear-gradient(92deg, #0d9488 0%, #0891b2 45%, #7c3aed 100%);
+  background-size: 200% auto;
+  animation: gradient-x 6s ease infinite;
+}
+
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #eef1f5;
+}
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.35);
+}
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.55);
 }
 
 /* Aurora + grid backdrop, fixed behind everything */
