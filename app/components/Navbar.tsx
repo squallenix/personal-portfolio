@@ -53,7 +53,7 @@ export default function Navbar() {
             N
           </span>
           <span className="font-semibold tracking-tight text-white">
-            nizam<span className="text-emerald-400">.dev</span>
+            Nizam<span className="text-emerald-400"> Uddin</span>
           </span>
         </a>
 

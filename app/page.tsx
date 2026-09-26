@@ -203,15 +203,23 @@ export default function Home() {
             <div className="glass relative overflow-hidden rounded-2xl py-5">
               <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[#0a0c12] to-transparent" />
               <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[#0a0c12] to-transparent" />
-              <div className="flex w-max animate-marquee gap-4">
-                {[...techMarquee, ...techMarquee].map((t, i) => (
-                  <span
-                    key={`${t}-${i}`}
-                    className="flex items-center gap-2 whitespace-nowrap rounded-full bg-white/[0.04] px-5 py-2 font-mono text-sm text-zinc-300 ring-1 ring-white/10"
+              <div className="flex w-max animate-marquee">
+                {[0, 1].map((group) => (
+                  <div
+                    key={group}
+                    aria-hidden={group === 1}
+                    className="flex w-max shrink-0 gap-4 pr-4"
                   >
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                    {t}
-                  </span>
+                    {techMarquee.map((t) => (
+                      <span
+                        key={t}
+                        className="flex items-center gap-2 whitespace-nowrap rounded-full bg-white/[0.04] px-5 py-2 font-mono text-sm text-zinc-300 ring-1 ring-white/10"
+                      >
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 ))}
               </div>
             </div>

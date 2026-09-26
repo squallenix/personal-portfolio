@@ -21,6 +21,7 @@
 /build
 
 # misc
+.freebuff/
 .DS_Store
 *.pem
 
