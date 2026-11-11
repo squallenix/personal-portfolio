@@ -97,13 +97,13 @@ export const repos: Repo[] = [
     year: "2026",
   },
   {
-    name: "car_rent_backend_structure",
+    name: "prisma-pg_backend_structure",
     title: "Car Rental Management Backend",
     tagline: "Scalable rental REST API",
     description:
       "A scalable car-rental REST API with modular architecture, JWT authentication and role-based access for admins, customers and drivers. Supports vehicle management, rental requests, trips, offers, reviews, reports and cloud file storage.",
     languages: ["Node.js", "Express 5", "Prisma", "PostgreSQL", "TypeScript"],
-    github: "https://github.com/squallenix/car_rent_backend_structure",
+    github: "https://github.com/squallenix/prisma-pg_backend_structure",
     highlight: true,
     year: "2026",
   },
