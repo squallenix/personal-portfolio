@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { getSiteUrl, profile, techMarquee } from "@/lib/data";
 import "./globals.css";
 
 const inter = Inter({
@@ -14,12 +15,19 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
   title: "Nizam Uddin — Junior Full-Stack Engineer",
   description:
     "Portfolio of Nizam Uddin, a Junior Full-Stack Engineer at FoundExe building responsive UIs, scalable APIs and AI-powered tools with Next.js, Prisma, PostgreSQL and Python.",
   keywords: [
     "Nizam Uddin",
+    "squallenix",
     "Junior Full-Stack Engineer",
     "Full-Stack Developer",
     "FoundExe",
@@ -32,8 +40,34 @@ export const metadata: Metadata = {
     title: "Nizam Uddin — Junior Full-Stack Engineer",
     description:
       "Junior Full-Stack Engineer crafting responsive interfaces, scalable APIs and AI-powered tools.",
+    url: siteUrl,
     type: "website",
   },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  alternateName: profile.handle,
+  url: siteUrl,
+  jobTitle: profile.role,
+  worksFor: {
+    "@type": "Organization",
+    name: "FoundExe",
+    url: "https://www.foundexe.com",
+  },
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Stamford University Bangladesh",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Dhaka",
+    addressCountry: "BD",
+  },
+  sameAs: [profile.github, profile.linkedin],
+  knowsAbout: techMarquee,
 };
 
 /* Runs before paint to apply the stored theme (or the OS preference)
@@ -56,6 +90,12 @@ export default function RootLayout({
         className={`${inter.variable} ${mono.variable} font-sans antialiased bg-[#f5f7fa] text-zinc-800 dark:bg-[#05060a] dark:text-zinc-200 min-h-screen overflow-x-hidden selection:bg-emerald-300/40 selection:text-zinc-900 dark:selection:bg-emerald-400/30 dark:selection:text-white`}
       >
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         {children}
       </body>
     </html>

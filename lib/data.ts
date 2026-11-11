@@ -211,3 +211,20 @@ export const socials = [
   { name: "LinkedIn", href: profile.linkedin },
   { name: "Email", href: `mailto:${profile.email}` },
 ];
+
+/**
+ * Resolve the canonical site origin from explicit configuration or Vercel env vars.
+ */
+export function getSiteUrl(): string {
+  const candidates = [
+    process.env.NEXT_PUBLIC_SITE_URL,
+    process.env.VERCEL_PROJECT_PRODUCTION_URL,
+    process.env.VERCEL_URL,
+  ];
+  for (const raw of candidates) {
+    const value = raw?.trim().replace(/\/+$/, "");
+    if (!value) continue;
+    return /^https?:\/\//i.test(value) ? value : `https://${value}`;
+  }
+  return "http://localhost:3000";
+}
