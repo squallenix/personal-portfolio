@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const PHRASES = [
-  "Full-Stack Developer",
+  "Junior Full-Stack Engineer",
   "Next.js & React Craftsman",
   "API & Database Builder",
   "AI Tooling Explorer",

@@ -12,7 +12,7 @@ export type Repo = {
 export const profile = {
   name: "Nizam Uddin",
   handle: "squallenix",
-  role: "Full-Stack Developer",
+  role: "Junior Full-Stack Engineer",
   location: "Dhaka, Bangladesh",
   email: "squallenix12@gmail.com",
   phone: "+880 1616 748375",
@@ -20,10 +20,10 @@ export const profile = {
   github: "https://github.com/squallenix",
   linkedin: "https://www.linkedin.com/in/nizam-uddin-50524a213/",
   about:
-    "Motivated Full-Stack Developer with a solid foundation in front-end and back-end development. Experienced in building responsive user interfaces, developing APIs, and working with databases — eager to contribute to team-based projects and deliver reliable, user-friendly applications.",
+    "Junior Full-Stack Engineer with a solid foundation in front-end and back-end development. Experienced in building responsive user interfaces, developing APIs, and working with databases — focused on shipping reliable, user-friendly applications.",
   aboutLong:
-    "I'm a full-stack developer and CSE undergraduate at Stamford University Bangladesh. I love taking a product from an empty repo to something people actually use — responsive front-ends, well-structured REST APIs, and AI-powered tools that run entirely on-device. Currently a Full-Stack Developer Intern at MSR Creation, shipping features across the stack with Next.js, Prisma and PostgreSQL.",
-  availability: "Open to internships & junior roles",
+    "I'm a Junior Full-Stack Engineer at FoundExe and CSE undergraduate at Stamford University Bangladesh. I love taking a product from an empty repo to something people actually use — responsive front-ends, well-structured REST APIs, and AI-powered tools that run entirely on-device, shipping features across the stack with Next.js, Prisma and PostgreSQL.",
+  availability: "Junior Full-Stack Engineer @ FoundExe",
 };
 
 export const stats = [
@@ -63,14 +63,30 @@ export const techMarquee = [
   "JWT Auth",
 ];
 
-export const experience = [
+export const experience: {
+  period: string;
+  title: string;
+  org: string;
+  orgUrl?: string;
+  points: string[];
+}[] = [
   {
-    period: "2026 June — Present",
+    period: "2026 — Present",
+    title: "Junior Full-Stack Engineer",
+    org: "FoundExe",
+    orgUrl: "https://www.foundexe.com",
+    points: [
+      "Building and shipping full-stack web features across frontend UIs, APIs, and databases.",
+      "Collaborating on production applications with Next.js, TypeScript, Prisma and PostgreSQL.",
+    ],
+  },
+  {
+    period: "2026 June — 2026",
     title: "Full-Stack Developer Intern",
     org: "MSR Creation",
     points: [
-      "Building and shipping features across the stack in an ongoing internship.",
-      "Working with responsive UIs, REST APIs and database-backed workflows.",
+      "Built and shipped features across the stack during an engineering internship.",
+      "Worked with responsive UIs, REST APIs and database-backed workflows.",
     ],
   },
   {

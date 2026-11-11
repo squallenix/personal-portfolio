@@ -15,21 +15,23 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nizam Uddin — Full-Stack Developer",
+  title: "Nizam Uddin — Junior Full-Stack Engineer",
   description:
-    "Portfolio of Nizam Uddin, a full-stack developer building responsive UIs, scalable APIs and AI-powered tools with Next.js, Prisma, PostgreSQL and Python.",
+    "Portfolio of Nizam Uddin, a Junior Full-Stack Engineer at FoundExe building responsive UIs, scalable APIs and AI-powered tools with Next.js, Prisma, PostgreSQL and Python.",
   keywords: [
     "Nizam Uddin",
+    "Junior Full-Stack Engineer",
     "Full-Stack Developer",
+    "FoundExe",
     "Next.js",
     "React",
     "TypeScript",
     "Portfolio",
   ],
   openGraph: {
-    title: "Nizam Uddin — Full-Stack Developer",
+    title: "Nizam Uddin — Junior Full-Stack Engineer",
     description:
-      "Full-stack developer crafting responsive interfaces, scalable APIs and AI-powered tools.",
+      "Junior Full-Stack Engineer crafting responsive interfaces, scalable APIs and AI-powered tools.",
     type: "website",
   },
 };

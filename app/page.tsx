@@ -162,8 +162,17 @@ export default function Home() {
                   </p>
                   <p>
                     Right now I&apos;m deep into the Next.js + Prisma +
-                    PostgreSQL ecosystem at my internship, while exploring
-                    local LLM tooling and on-device AI in my side projects.
+                    PostgreSQL ecosystem in my role at{" "}
+                    <a
+                      href="https://www.foundexe.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-emerald-600 underline decoration-emerald-500/30 underline-offset-4 transition-colors hover:text-emerald-500 dark:text-emerald-400 dark:hover:text-emerald-300"
+                    >
+                      FoundExe
+                    </a>
+                    , while exploring local LLM tooling and on-device AI in my
+                    side projects.
                   </p>
                 </div>
               </div>
@@ -269,7 +278,20 @@ export default function Home() {
                     {item.period}
                   </p>
                   <h3 className="text-xl font-semibold text-zinc-900 dark:text-white">{item.title}</h3>
-                  <p className="mt-0.5 text-sm text-zinc-500">{item.org}</p>
+                  <p className="mt-0.5 text-sm text-zinc-500">
+                    {item.orgUrl ? (
+                      <a
+                        href={item.orgUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors hover:text-emerald-600 dark:hover:text-emerald-400"
+                      >
+                        {item.org} ↗
+                      </a>
+                    ) : (
+                      item.org
+                    )}
+                  </p>
                   <ul className="mt-4 space-y-2">
                     {item.points.map((pt) => (
                       <li key={pt} className="flex gap-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
@@ -353,8 +375,8 @@ export default function Home() {
                   <span className="text-gradient">worth shipping.</span>
                 </h2>
                 <p className="mx-auto mt-5 max-w-md text-zinc-400">
-                  I&apos;m open to internships, junior roles and interesting
-                  collaborations. My inbox is always open.
+                  I&apos;m always open to interesting collaborations, product
+                  builds and engineering conversations. My inbox is always open.
                 </p>
               </Reveal>
 
