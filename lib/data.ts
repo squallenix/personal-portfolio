@@ -98,11 +98,11 @@ export const repos: Repo[] = [
   },
   {
     name: "prisma-pg_backend_structure",
-    title: "Car Rental Management Backend",
-    tagline: "Scalable rental REST API",
+    title: "Prisma & PostgreSQL Backend Architecture",
+    tagline: "Layered modular REST API",
     description:
-      "A scalable car-rental REST API with modular architecture, JWT authentication and role-based access for admins, customers and drivers. Supports vehicle management, rental requests, trips, offers, reviews, reports and cloud file storage.",
-    languages: ["Node.js", "Express 5", "Prisma", "PostgreSQL", "TypeScript"],
+      "A layered, auto-wired modular REST API built with Express 5, Prisma ORM and PostgreSQL. Features versioned module discovery, JWT authentication with role-based access control, Joi schema validation, global error normalization and CLI superadmin seeding.",
+    languages: ["Node.js", "Express 5", "Prisma", "PostgreSQL", "JavaScript"],
     github: "https://github.com/squallenix/prisma-pg_backend_structure",
     highlight: true,
     year: "2026",
